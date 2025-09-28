@@ -291,6 +291,124 @@
         color: var(--color-primary);
         font-weight: 600;
       }
+
+      .wc-wrap {
+        --terra: #c76a4a;
+        --terra2: #a0522d;
+        --muted: #777;
+        --bd: rgba(199, 106, 74, 0.35);
+        --chip: rgba(199, 106, 74, 0.25);
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 16px 12px;
+        background: #fff;
+        text-align: center;
+        font-family: "Cormorant Garamond", Georgia, serif;
+      }
+      .wc-ribbon {
+        height: 1.5px;
+        width: min(94%, 780px);
+        margin: 0 auto;
+        border-radius: 999px;
+        opacity: 0.9;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--terra),
+          transparent
+        );
+      }
+      .wc-floral {
+        width: 150px;
+        height: 34px;
+        margin: 8px auto 6px;
+        color: var(--terra);
+      }
+      .wc-phrase {
+        max-width: 28ch;
+        margin: 6px auto 8px;
+        color: var(--terra2);
+        font-style: italic;
+        font-size: clamp(16px, 2.5vw, 19px);
+        line-height: 1.35;
+      }
+      .wc-title {
+        margin: 2px 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      /* — SIEMPRE 1 SOLA FILA (4 cajas) — */
+      .wc-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        justify-content: center;
+        align-items: stretch;
+        min-width: 300px;
+      }
+      .wc-box {
+        position: relative;
+        flex: 1 1 0;
+        min-width: 0;
+        background: #fff;
+        border: 1px solid var(--bd);
+        border-radius: 16px;
+        padding: 10px 6px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      }
+      .wc-chip {
+        position: absolute;
+        left: -7px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 9px;
+        height: 9px;
+        background: var(--chip);
+        border-radius: 2px;
+      }
+      .wc-chip.r {
+        left: auto;
+        right: -7px;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      .wc-num {
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+        color: var(--terra2);
+        font-weight: 600;
+        font-size: clamp(18px, 6.5vw, 36px);
+        transform-origin: 50% 100%;
+      }
+      .wc-label {
+        margin-top: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: #6f6f6f;
+        font-size: clamp(9px, 2.2vw, 10px);
+      }
+      .flip-enter {
+        transform: rotateX(-90deg);
+        opacity: 0;
+      }
+      .flip-show {
+        transform: rotateX(0);
+        opacity: 1;
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flip-enter,
+        .flip-show {
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+      .wc-date {
+        margin: 12px 0 4px;
+        color: #444;
+        font-size: 16px;
+      }
     </style>
   </head>
 
@@ -492,30 +610,126 @@
 
       <!-- Gift Section -->
       <section class="dress-code-section">
-        <img
-          class="image-dress-code"
-          src="assets/gift.png"
-          alt="dress code"
-        />
+        <img class="image-dress-code" src="assets/gift.png" alt="dress code" />
         <h3 class="heading-secondary">Obsequio</h3>
         <p class="text-body">
-          Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio, te agradecemos una contribución en efectivo para nuestro nuevo hogar.
+          Tu presencia es nuestro mejor regalo, pero si deseas hacernos un
+          obsequio, te agradecemos una contribución en efectivo para nuestro
+          nuevo hogar.
         </p>
 
         <div class="bank-details">
           <h4 class="heading-tertiary">DATOS BANCARIOS</h4>
           <div class="bank-info">
-            <p class="text-body"><strong>Titular:</strong><br>Emma Matamoros Veloz</p>
-            <p class="text-body"><strong>Tipo / Banco:</strong><br>Cuenta de ahorros · Banco Guayaquil</p>
-            <p class="text-body"><strong>CI:</strong><br>0956163174</p>
-            <p class="text-body"><strong>N.º de cuenta:</strong><br>0014510058</p>
-            <p class="text-body"><strong>Correo:</strong><br>lisz5959@gmail.com</p>
+            <p class="text-body">
+              <strong>Titular:</strong><br />Emma Matamoros Veloz
+            </p>
+            <p class="text-body">
+              <strong>Tipo / Banco:</strong><br />Cuenta de ahorros · Banco
+              Guayaquil
+            </p>
+            <p class="text-body"><strong>CI:</strong><br />0956163174</p>
+            <p class="text-body">
+              <strong>N.º de cuenta:</strong><br />0014510058
+            </p>
+            <p class="text-body">
+              <strong>Correo:</strong><br />lisz5959@gmail.com
+            </p>
           </div>
         </div>
 
         <p class="text-body text-muted">
           ¡Gracias por ser parte de este día tan especial!
         </p>
+      </section>
+      <section
+        class="wc-wrap"
+        id="wc-countdown"
+        aria-label="Cuenta regresiva boda"
+      >
+        <!-- Cinta + guirnalda superior -->
+        <div class="wc-ribbon" style="margin-bottom: 8px"></div>
+        <svg
+          class="wc-floral"
+          viewBox="0 0 220 44"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M10 22 Q 70 6, 110 22 T 210 22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle cx="110" cy="22" r="2.4" />
+          <circle cx="75" cy="18" r="1.6" />
+          <circle cx="145" cy="18" r="1.6" />
+          <path d="M90 16 c6 -4 12 -4 18 0 c-5 7 13 7 18 0z" />
+          <path d="M130 16 c-6 -4 12 -4 18 0 c5 7 13 7 18 0z" />
+        </svg>
+
+        <!-- Frase -->
+        <p class="wc-phrase" id="wc-phrase">
+          Nuestro ‘para siempre’ comienza en
+        </p>
+
+        <!-- Título -->
+        <p class="wc-title">Faltan</p>
+
+        <!-- 4 cajas en 1 sola fila (mobile/PC) -->
+        <div class="wc-row" role="group" aria-label="Tiempo restante">
+          <div class="wc-box">
+            <span class="wc-chip" aria-hidden="true"></span
+            ><span class="wc-chip r" aria-hidden="true"></span>
+            <div id="wc-days" class="wc-num">00</div>
+            <div class="wc-label">días</div>
+          </div>
+          <div class="wc-box">
+            <span class="wc-chip" aria-hidden="true"></span
+            ><span class="wc-chip r" aria-hidden="true"></span>
+            <div id="wc-hours" class="wc-num">00</div>
+            <div class="wc-label">horas</div>
+          </div>
+          <div class="wc-box">
+            <span class="wc-chip" aria-hidden="true"></span
+            ><span class="wc-chip r" aria-hidden="true"></span>
+            <div id="wc-mins" class="wc-num">00</div>
+            <div class="wc-label">min</div>
+          </div>
+          <div class="wc-box">
+            <span class="wc-chip" aria-hidden="true"></span
+            ><span class="wc-chip r" aria-hidden="true"></span>
+            <div id="wc-secs" class="wc-num">00</div>
+            <div class="wc-label">seg</div>
+          </div>
+        </div>
+
+        <!-- Guirnalda invertida + cinta inferior -->
+        <svg
+          class="wc-floral"
+          style="transform: rotate(180deg); margin-top: 12px"
+          viewBox="0 0 220 44"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M10 22 Q 70 6, 110 22 T 210 22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          />
+          <circle cx="110" cy="22" r="2.4" />
+          <circle cx="75" cy="18" r="1.6" />
+          <circle cx="145" cy="18" r="1.6" />
+          <path d="M90 16 c6 -4 12 -4 18 0 c-5 7 13 7 18 0z" />
+          <path d="M130 16 c-6 -4 12 -4 18 0 c5 7 13 7 18 0z" />
+        </svg>
+        <div class="wc-ribbon" style="margin-top: 6px"></div>
+
+        <!-- Fecha destino -->
+        <p id="wc-date-text" class="wc-date"></p>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
