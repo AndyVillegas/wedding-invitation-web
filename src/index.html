@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet" />
     <style>
+        /* === FONT DEFINITIONS === */
         @font-face {
             font-family: 'Amsterdam One';
             src: url('fonts/Amsterdam.ttf') format('truetype');
@@ -21,54 +22,77 @@
             font-style: normal;
         }
 
+        /* === CSS VARIABLES === */
         :root {
-            --terra: #c76a4a;
-            --ink: #3f312b;
-            --muted: #6f615a;
-            --paper: #ffffff;
-            --bd: rgba(199, 106, 74, 0.25);
-            --floral: url("assets/floral.png");
-            --mist: url("assets/mist.png");
+            --color-primary: #c76a4a;
+            --color-text-primary: #3f312b;
+            --color-text-muted: #6f615a;
+            --color-background: #ffffff;
+            --color-border: rgba(199, 106, 74, 0.25);
+            --image-floral: url("assets/floral.png");
+            --image-mist: url("assets/mist.png");
         }
 
+        /* === RESET & BASE === */
         body {
             margin: 0;
             font-family: "Cormorant Garamond", serif;
-            background: #ffffff;
-            color: var(--ink);
+            background: var(--color-background);
+            color: var(--color-text-primary);
         }
 
-        .container {
+        /* === LAYOUT CONTAINERS === */
+        .main-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .hero-container {
+        .section-container {
+            padding: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hero-section {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .invite-container {
+        .invitation-section {
             position: relative;
             display: inline-block;
             width: 100%;
         }
 
-        .invite-image {
+        .location-section img {
+            max-width: 100px;
+        }
+
+        .ceremony-details,
+        .reception-details {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .dress-code-section {
+            text-align: center;
+        }
+
+        .schedule-section {
+            text-align: center;
+        }
+
+        /* === INVITATION CONTENT === */
+        .invitation-background {
             display: block;
             width: 100%;
             height: auto;
             border-radius: 12px;
         }
 
-        .invite-body {
+        .invitation-content {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -77,7 +101,7 @@
             width: 100%;
         }
 
-        .verse {
+        .bible-verse {
             text-align: center;
             font-size: clamp(20px, 2.7vw, 25px);
             line-height: 1.55;
@@ -86,24 +110,16 @@
             color: #4f433d;
         }
 
-        .floral {
+        .floral-decoration {
             height: 90px;
             margin: 10px auto 6px;
-            background-image: var(--floral);
+            background-image: var(--image-floral);
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
         }
 
-        .heading {
-            text-align: center;
-            color: var(--terra);
-            font-weight: 600;
-            font-size: clamp(25px, 3.8vw, 30px);
-            margin: 8px 0 14px;
-        }
-
-        .parents {
+        .parents-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6px 26px;
@@ -112,16 +128,50 @@
             font-size: clamp(18px, 2.7vw, 15.5px);
         }
 
-        .parents p {
+        .parents-section p {
             margin: 0;
             line-height: 1.35;
         }
 
-        .muted {
-            color: var(--muted);
+        .date-section img {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
         }
 
-        .body-text {
+        /* === TYPOGRAPHY === */
+        .heading-primary {
+            text-align: center;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: clamp(25px, 3.8vw, 30px);
+            margin: 8px 0 14px;
+        }
+
+        .heading-secondary {
+            font-size: 1.5rem;
+            margin-top: 12px;
+            margin-bottom: 20px;
+            font-family: 'Amsterdam One', serif;
+            font-weight: normal;
+            color: var(--color-primary);
+        }
+
+        .heading-tertiary {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--color-primary);
+        }
+
+        .text-body {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            max-width: 300px;
+            margin: 0 auto 10px;
+        }
+
+        .text-invitation {
             text-align: center;
             max-width: 34ch;
             margin: 6px auto 22px;
@@ -129,47 +179,29 @@
             line-height: 1.55;
         }
 
-        .date-container img {
-            width: 100%;
+        .text-muted {
+            color: var(--color-text-muted);
+        }
+
+        /* === IMAGES === */
+        .image-responsive {
+            max-width: 100%;
             height: auto;
-            max-width: 250px;
         }
 
-        .ceremony-container,
-        .reception-container {
-            text-align: center;
-            padding: 8px;
-        }
-
-        .location-container img {
+        .image-dress-code {
             max-width: 100px;
+            margin: 0 auto 32px;
+            display: block;
         }
 
-        .location-container .heading,
-        .schedule-container .heading,
-        .dress-code-container h3.heading {
-            font-size: 1.5rem;
-            margin-top: 12px;
-            margin-bottom: 20px;
-            font-family: 'Amsterdam One', serif;
-            font-weight: normal;
-        }
-
-        .location-container .body {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            max-width: 300px;
-            margin: 0 auto 10px;
-        }
-
+        /* === BUTTONS === */
         .btn-maps {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: var(--terra);
-            /* color del fondo */
+            background-color: var(--color-primary);
             color: #fff;
-            /* texto en blanco */
             font-weight: bold;
             text-decoration: none;
             padding: 10px 20px;
@@ -181,76 +213,54 @@
             height: 18px;
             fill: #fff;
         }
-
-        .padded-container {
-            padding: 16px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .dress-code-container .image {
-            max-width: 100px;
-            margin: 0 auto 32px;
-            display: block;
-        }
-
-        .dress-code-container .body {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            max-width: 300px;
-            margin: 0 auto 10px;
-            text-align: center;
-        }
-
-        .dress-code-container h4.heading {
-            font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
     </style>
 </head>
 
 <body>
-    <main class="container">
-        <!-- Hero -->
-        <div class="hero-container">
-            <img class="image hero-image" src="assets/hero-image-mobile.png" alt="Andy & Emma" />
-        </div>
-        <div class="invite-container">
-            <img class="image invite-image" src="assets/invite-background-mobile.png" aria-hidden="true" />
-            <article class="invite-body">
-                <p class="verse">
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img class="image-responsive" src="assets/hero-image-mobile.png" alt="Andy & Emma" />
+        </section>
+
+        <!-- Invitation Section -->
+        <section class="invitation-section">
+            <img class="invitation-background" src="assets/invite-background-mobile.png" aria-hidden="true" />
+            <article class="invitation-content">
+                <p class="bible-verse">
                     Uno solo puede ser vencido, pero dos pueden resistir.<br />
                     ¡La cuerda de tres hilos no se rompe fácilmente!<br />
                     <em>Eclesiastés 4:12</em>
                 </p>
 
-                <img class="floral" src="assets/floral.png" alt="" aria-hidden="true" />
+                <div class="floral-decoration"></div>
 
-                <h2 class="heading">
+                <h2 class="heading-primary">
                     Con la bendición de Dios y<br />nuestros padres
                 </h2>
 
-                <section class="parents">
-                    <p>Ricardo Matamoros<br /><span class="muted">Nory Veloz</span></p>
+                <section class="parents-section">
+                    <p>Ricardo Matamoros<br /><span class="text-muted">Nory Veloz</span></p>
                     <p>
-                        Luis Villegas<br /><span class="muted">Rosario Constante</span>
+                        Luis Villegas<br /><span class="text-muted">Rosario Constante</span>
                     </p>
                 </section>
 
-                <p class="body-text">
+                <p class="text-invitation">
                     Tenemos el honor de invitar a Usted (es) a nuestro Matrimonio
                     Eclesiástico el próximo día.
                 </p>
-                <section class="date-container">
+                <section class="date-section">
                     <img src="assets/invite-date-mobile.png" alt="Sábado 16 de Noviembre 2024, 4:00 PM" />
                 </section>
-        </div>
-        <div class="location-container">
-            <div class="ceremony-container">
-                <img class="image location-image" src="assets/ceremony-location-mobile.png" />
-                <h3 class="heading">Ceremonia</h3>
-                <p class="body">
+            </article>
+        </section>
+        <!-- Location Section -->
+        <section class="location-section">
+            <div class="ceremony-details">
+                <img class="image-responsive" src="assets/ceremony-location-mobile.png" alt="Ceremonia" />
+                <h3 class="heading-secondary">Ceremonia</h3>
+                <p class="text-body">
                     Iglesia Católica San Gabriel de la Dolorosa
                     Av. Víctor Hugo Sicourret,
                     entre Av. Fco. de Orellana
@@ -272,10 +282,10 @@
                     Abrir en Google Maps
                 </a>
             </div>
-            <div class="reception-container">
-                <img class="image location-image" src="assets/reception-location-mobile.png" />
-                <h3 class="heading">Recepción</h3>
-                <p class="body">
+            <div class="reception-details">
+                <img class="image-responsive" src="assets/reception-location-mobile.png" alt="Recepción" />
+                <h3 class="heading-secondary">Recepción</h3>
+                <p class="text-body">
                     Edificio Las Cámaras<br>Salón: Las Cámaras
                     Av. Francisco de&nbsp;Orellana
                 </p>
@@ -296,25 +306,32 @@
                     Abrir en Google Maps
                 </a>
             </div>
-        </div>
-        <div class="padded-container">
-            <img class="image" src="assets/andy-emma-image-1.png" alt="Andy & Emma" />
-        </div>
-        <div class="schedule-container">
-            <h3 class="heading">Programa</h3>
-            <img class="image" src="assets/schedule-mobile.png" alt="Programa" />
-        </div>
-        <div class="container">
-            <img class="image" src="assets/andy-emma-image-2.png" alt="Andy & Emma" />
-        </div>
-        <div class="dress-code-container">
-            <img class="image" src="assets/dress-code.png" alt="dress code" />
-            <h3 class="heading">Código de vestimenta</h3>
-            <h4 class="heading">TRAJE FORMAL</h4>
-            <p class="body">
+        </section>
+        <!-- Gallery Section -->
+        <section class="section-container">
+            <img class="image-responsive" src="assets/andy-emma-image-1.png" alt="Andy & Emma" />
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="schedule-section">
+            <h3 class="heading-secondary">Programa</h3>
+            <img class="image-responsive" src="assets/schedule-mobile.png" alt="Programa" />
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section-container" style="padding: 0;">
+            <img class="image-responsive" src="assets/andy-emma-image-2.png" alt="Andy & Emma" />
+        </section>
+
+        <!-- Dress Code Section -->
+        <section class="dress-code-section">
+            <img class="image-dress-code" src="assets/dress-code.png" alt="dress code" />
+            <h3 class="heading-secondary">Código de vestimenta</h3>
+            <h4 class="heading-tertiary">TRAJE FORMAL</h4>
+            <p class="text-body">
                 Se reservan los colores: Blanco y Beige para uso de la Novia
             </p>
-        </div>
+        </section>
     </main>
     <script>
     </script>
