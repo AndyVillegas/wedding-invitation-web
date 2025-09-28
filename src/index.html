@@ -465,7 +465,7 @@
           <section class="date-section">
             <img
               src="assets/invite-date-mobile.png"
-              alt="Sábado 16 de Noviembre 2024, 4:00 PM"
+              alt="Sábado 25 de Octubre 2025, 6:00 PM"
             />
           </section>
         </article>
@@ -666,17 +666,67 @@
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            d="M10 22 Q 70 6, 110 22 T 210 22"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-          />
-          <circle cx="110" cy="22" r="2.4" />
-          <circle cx="75" cy="18" r="1.6" />
-          <circle cx="145" cy="18" r="1.6" />
-          <path d="M90 16 c6 -4 12 -4 18 0 c-5 7 13 7 18 0z" />
-          <path d="M130 16 c-6 -4 12 -4 18 0 c5 7 13 7 18 0z" />
+          <!-- Tallo principal ondulado -->
+          <path d="M10,22 Q40,12 70,22 Q100,32 130,22 Q160,12 190,22 Q210,28 210,22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                opacity="0.6"/>
+
+          <!-- Hoja grande izquierda -->
+          <g transform="translate(40, 16)">
+            <path d="M0,0 Q-8,-6 -12,0 Q-8,8 0,6 Q8,8 12,0 Q8,-6 0,0 Z"
+                  fill="currentColor" opacity="0.7"/>
+            <path d="M0,0 Q0,-3 0,-6 M0,0 Q-3,2 -6,3 M0,0 Q3,2 6,3"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hoja grande central -->
+          <g transform="translate(110, 12)">
+            <path d="M0,0 Q-10,-8 -15,0 Q-10,10 0,8 Q10,10 15,0 Q10,-8 0,0 Z"
+                  fill="currentColor" opacity="0.8"/>
+            <path d="M0,0 Q0,-4 0,-8 M0,0 Q-4,3 -8,4 M0,0 Q4,3 8,4"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hoja grande derecha -->
+          <g transform="translate(180, 16)">
+            <path d="M0,0 Q-8,-6 -12,0 Q-8,8 0,6 Q8,8 12,0 Q8,-6 0,0 Z"
+                  fill="currentColor" opacity="0.7"/>
+            <path d="M0,0 Q0,-3 0,-6 M0,0 Q-3,2 -6,3 M0,0 Q3,2 6,3"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hojas pequeñas a lo largo del tallo -->
+          <g transform="translate(25, 20)">
+            <path d="M0,0 Q-4,-3 -6,0 Q-4,4 0,3 Q4,4 6,0 Q4,-3 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(65, 28)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(95, 18)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(135, 28)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(155, 18)">
+            <path d="M0,0 Q-4,-3 -6,0 Q-4,4 0,3 Q4,4 6,0 Q4,-3 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(195, 24)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
         </svg>
 
         <!-- Frase -->
@@ -684,8 +734,6 @@
           Nuestro ‘para siempre’ comienza en
         </p>
 
-        <!-- Título -->
-        <p class="countdown-title">Faltan</p>
 
         <!-- 4 cajas en 1 sola fila (mobile/PC) -->
         <div class="countdown-row" role="group" aria-label="Tiempo restante">
@@ -724,17 +772,67 @@
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            d="M10 22 Q 70 6, 110 22 T 210 22"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-          />
-          <circle cx="110" cy="22" r="2.4" />
-          <circle cx="75" cy="18" r="1.6" />
-          <circle cx="145" cy="18" r="1.6" />
-          <path d="M90 16 c6 -4 12 -4 18 0 c-5 7 13 7 18 0z" />
-          <path d="M130 16 c-6 -4 12 -4 18 0 c5 7 13 7 18 0z" />
+          <!-- Tallo principal ondulado -->
+          <path d="M10,22 Q40,12 70,22 Q100,32 130,22 Q160,12 190,22 Q210,28 210,22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                opacity="0.6"/>
+
+          <!-- Hoja grande izquierda -->
+          <g transform="translate(40, 16)">
+            <path d="M0,0 Q-8,-6 -12,0 Q-8,8 0,6 Q8,8 12,0 Q8,-6 0,0 Z"
+                  fill="currentColor" opacity="0.7"/>
+            <path d="M0,0 Q0,-3 0,-6 M0,0 Q-3,2 -6,3 M0,0 Q3,2 6,3"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hoja grande central -->
+          <g transform="translate(110, 12)">
+            <path d="M0,0 Q-10,-8 -15,0 Q-10,10 0,8 Q10,10 15,0 Q10,-8 0,0 Z"
+                  fill="currentColor" opacity="0.8"/>
+            <path d="M0,0 Q0,-4 0,-8 M0,0 Q-4,3 -8,4 M0,0 Q4,3 8,4"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hoja grande derecha -->
+          <g transform="translate(180, 16)">
+            <path d="M0,0 Q-8,-6 -12,0 Q-8,8 0,6 Q8,8 12,0 Q8,-6 0,0 Z"
+                  fill="currentColor" opacity="0.7"/>
+            <path d="M0,0 Q0,-3 0,-6 M0,0 Q-3,2 -6,3 M0,0 Q3,2 6,3"
+                  fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          </g>
+
+          <!-- Hojas pequeñas a lo largo del tallo -->
+          <g transform="translate(25, 20)">
+            <path d="M0,0 Q-4,-3 -6,0 Q-4,4 0,3 Q4,4 6,0 Q4,-3 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(65, 28)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(95, 18)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(135, 28)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(155, 18)">
+            <path d="M0,0 Q-4,-3 -6,0 Q-4,4 0,3 Q4,4 6,0 Q4,-3 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
+
+          <g transform="translate(195, 24)">
+            <path d="M0,0 Q-3,-2 -4,0 Q-3,3 0,2 Q3,3 4,0 Q3,-2 0,0 Z"
+                  fill="currentColor" opacity="0.5"/>
+          </g>
         </svg>
         <div class="countdown-ribbon" style="margin-top: 6px"></div>
 
@@ -751,6 +849,95 @@
           interval: 3500,
         });
         splide.mount();
+
+        // Contador regresivo para la boda
+        function initCountdown() {
+          // Fecha y hora del matrimonio: 25 de Octubre 2025, 6:00 PM (Ecuador)
+          const weddingDate = new Date("2025-10-25T18:00:00-05:00");
+
+          // Elementos del DOM
+          const daysElement = document.getElementById("countdown-days");
+          const hoursElement = document.getElementById("countdown-hours");
+          const minutesElement = document.getElementById("countdown-minutes");
+          const secondsElement = document.getElementById("countdown-seconds");
+          const dateTextElement = document.getElementById("countdown-date-text");
+          const phraseElement = document.getElementById("countdown-phrase");
+
+          // Mostrar la fecha objetivo
+          if (dateTextElement) {
+            const options = {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: 'numeric',
+              minute: '2-digit',
+              timeZone: 'America/Guayaquil'
+            };
+            dateTextElement.textContent = weddingDate.toLocaleDateString('es-EC', options);
+          }
+
+          function updateCountdown() {
+            const now = new Date();
+            const difference = weddingDate.getTime() - now.getTime();
+
+            // Si la fecha ya pasó
+            if (difference < 0) {
+              if (daysElement) daysElement.textContent = "00";
+              if (hoursElement) hoursElement.textContent = "00";
+              if (minutesElement) minutesElement.textContent = "00";
+              if (secondsElement) secondsElement.textContent = "00";
+              if (phraseElement) phraseElement.textContent = "¡Ya nos casamos!";
+              return;
+            }
+
+            // Calcular tiempo restante
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Función para agregar cero delante de números menores a 10
+            function padZero(num) {
+              return num.toString().padStart(2, '0');
+            }
+
+            // Actualizar elementos con animación suave
+            function updateElement(element, newValue) {
+              if (element && element.textContent !== newValue) {
+                element.classList.add('flip-animation-enter');
+                setTimeout(() => {
+                  element.textContent = newValue;
+                  element.classList.remove('flip-animation-enter');
+                  element.classList.add('flip-animation-show');
+                  setTimeout(() => {
+                    element.classList.remove('flip-animation-show');
+                  }, 400);
+                }, 200);
+              }
+            }
+
+            // Actualizar cada elemento
+            if (daysElement) updateElement(daysElement, padZero(days));
+            if (hoursElement) updateElement(hoursElement, padZero(hours));
+            if (minutesElement) updateElement(minutesElement, padZero(minutes));
+            if (secondsElement) updateElement(secondsElement, padZero(seconds));
+          }
+
+          // Actualizar inmediatamente
+          updateCountdown();
+
+          // Actualizar cada segundo
+          setInterval(updateCountdown, 1000);
+        }
+
+        // Inicializar el contador
+        try {
+          initCountdown();
+          console.log("Contador iniciado correctamente");
+        } catch (error) {
+          console.error("Error al inicializar el contador:", error);
+        }
       });
     </script>
   </body>
