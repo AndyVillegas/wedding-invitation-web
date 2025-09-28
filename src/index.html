@@ -292,20 +292,17 @@
         font-weight: 600;
       }
 
-      .wc-wrap {
-        --terra: #c76a4a;
-        --terra2: #a0522d;
-        --muted: #777;
-        --bd: rgba(199, 106, 74, 0.35);
-        --chip: rgba(199, 106, 74, 0.25);
+      /* === COUNTDOWN SECTION === */
+      .countdown-section {
         max-width: 920px;
         margin: 0 auto;
         padding: 16px 12px;
-        background: #fff;
+        background: var(--color-background);
         text-align: center;
         font-family: "Cormorant Garamond", Georgia, serif;
       }
-      .wc-ribbon {
+
+      .countdown-ribbon {
         height: 1.5px;
         width: min(94%, 780px);
         margin: 0 auto;
@@ -314,33 +311,36 @@
         background: linear-gradient(
           90deg,
           transparent,
-          var(--terra),
+          var(--color-primary),
           transparent
         );
       }
-      .wc-floral {
+
+      .countdown-floral {
         width: 150px;
         height: 34px;
         margin: 8px auto 6px;
-        color: var(--terra);
+        color: var(--color-primary);
       }
-      .wc-phrase {
+
+      .countdown-phrase {
         max-width: 28ch;
         margin: 6px auto 8px;
-        color: var(--terra2);
+        color: #a0522d;
         font-style: italic;
         font-size: clamp(16px, 2.5vw, 19px);
         line-height: 1.35;
       }
-      .wc-title {
+
+      .countdown-title {
         margin: 2px 0 10px;
         text-transform: uppercase;
         letter-spacing: 0.3em;
         font-size: 12px;
-        color: var(--muted);
+        color: var(--color-text-muted);
       }
-      /* — SIEMPRE 1 SOLA FILA (4 cajas) — */
-      .wc-row {
+
+      .countdown-row {
         display: flex;
         flex-wrap: nowrap;
         gap: 8px;
@@ -348,66 +348,76 @@
         align-items: stretch;
         min-width: 300px;
       }
-      .wc-box {
+
+      .countdown-box {
         position: relative;
         flex: 1 1 0;
         min-width: 0;
-        background: #fff;
-        border: 1px solid var(--bd);
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
         border-radius: 16px;
         padding: 10px 6px;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
       }
-      .wc-chip {
+
+      .countdown-chip {
         position: absolute;
         left: -7px;
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
         width: 9px;
         height: 9px;
-        background: var(--chip);
+        background: rgba(199, 106, 74, 0.25);
         border-radius: 2px;
       }
-      .wc-chip.r {
+
+      .countdown-chip.chip-right {
         left: auto;
         right: -7px;
         transform: translateY(-50%) rotate(-45deg);
       }
-      .wc-num {
+
+      .countdown-number {
         font-variant-numeric: tabular-nums;
         line-height: 1;
-        color: var(--terra2);
+        color: #a0522d;
         font-weight: 600;
         font-size: clamp(18px, 6.5vw, 36px);
         transform-origin: 50% 100%;
       }
-      .wc-label {
+
+      .countdown-label {
         margin-top: 6px;
         text-transform: uppercase;
         letter-spacing: 0.28em;
         color: #6f6f6f;
         font-size: clamp(9px, 2.2vw, 10px);
       }
-      .flip-enter {
+
+      .countdown-date {
+        margin: 12px 0 4px;
+        color: var(--color-text-primary);
+        font-size: 16px;
+      }
+
+      /* === COUNTDOWN ANIMATIONS === */
+      .flip-animation-enter {
         transform: rotateX(-90deg);
         opacity: 0;
       }
-      .flip-show {
+
+      .flip-animation-show {
         transform: rotateX(0);
         opacity: 1;
         transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s;
       }
+
       @media (prefers-reduced-motion: reduce) {
-        .flip-enter,
-        .flip-show {
+        .flip-animation-enter,
+        .flip-animation-show {
           transform: none !important;
           transition: none !important;
         }
-      }
-      .wc-date {
-        margin: 12px 0 4px;
-        color: #444;
-        font-size: 16px;
       }
     </style>
   </head>
@@ -643,14 +653,14 @@
         </p>
       </section>
       <section
-        class="wc-wrap"
-        id="wc-countdown"
+        class="countdown-section"
+        id="countdown-container"
         aria-label="Cuenta regresiva boda"
       >
         <!-- Cinta + guirnalda superior -->
-        <div class="wc-ribbon" style="margin-bottom: 8px"></div>
+        <div class="countdown-ribbon" style="margin-bottom: 8px"></div>
         <svg
-          class="wc-floral"
+          class="countdown-floral"
           viewBox="0 0 220 44"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -670,44 +680,44 @@
         </svg>
 
         <!-- Frase -->
-        <p class="wc-phrase" id="wc-phrase">
+        <p class="countdown-phrase" id="countdown-phrase">
           Nuestro ‘para siempre’ comienza en
         </p>
 
         <!-- Título -->
-        <p class="wc-title">Faltan</p>
+        <p class="countdown-title">Faltan</p>
 
         <!-- 4 cajas en 1 sola fila (mobile/PC) -->
-        <div class="wc-row" role="group" aria-label="Tiempo restante">
-          <div class="wc-box">
-            <span class="wc-chip" aria-hidden="true"></span
-            ><span class="wc-chip r" aria-hidden="true"></span>
-            <div id="wc-days" class="wc-num">00</div>
-            <div class="wc-label">días</div>
+        <div class="countdown-row" role="group" aria-label="Tiempo restante">
+          <div class="countdown-box">
+            <span class="countdown-chip" aria-hidden="true"></span
+            ><span class="countdown-chip chip-right" aria-hidden="true"></span>
+            <div id="countdown-days" class="countdown-number">00</div>
+            <div class="countdown-label">días</div>
           </div>
-          <div class="wc-box">
-            <span class="wc-chip" aria-hidden="true"></span
-            ><span class="wc-chip r" aria-hidden="true"></span>
-            <div id="wc-hours" class="wc-num">00</div>
-            <div class="wc-label">horas</div>
+          <div class="countdown-box">
+            <span class="countdown-chip" aria-hidden="true"></span
+            ><span class="countdown-chip chip-right" aria-hidden="true"></span>
+            <div id="countdown-hours" class="countdown-number">00</div>
+            <div class="countdown-label">horas</div>
           </div>
-          <div class="wc-box">
-            <span class="wc-chip" aria-hidden="true"></span
-            ><span class="wc-chip r" aria-hidden="true"></span>
-            <div id="wc-mins" class="wc-num">00</div>
-            <div class="wc-label">min</div>
+          <div class="countdown-box">
+            <span class="countdown-chip" aria-hidden="true"></span
+            ><span class="countdown-chip chip-right" aria-hidden="true"></span>
+            <div id="countdown-minutes" class="countdown-number">00</div>
+            <div class="countdown-label">min</div>
           </div>
-          <div class="wc-box">
-            <span class="wc-chip" aria-hidden="true"></span
-            ><span class="wc-chip r" aria-hidden="true"></span>
-            <div id="wc-secs" class="wc-num">00</div>
-            <div class="wc-label">seg</div>
+          <div class="countdown-box">
+            <span class="countdown-chip" aria-hidden="true"></span
+            ><span class="countdown-chip chip-right" aria-hidden="true"></span>
+            <div id="countdown-seconds" class="countdown-number">00</div>
+            <div class="countdown-label">seg</div>
           </div>
         </div>
 
         <!-- Guirnalda invertida + cinta inferior -->
         <svg
-          class="wc-floral"
+          class="countdown-floral"
           style="transform: rotate(180deg); margin-top: 12px"
           viewBox="0 0 220 44"
           xmlns="http://www.w3.org/2000/svg"
@@ -726,10 +736,10 @@
           <path d="M90 16 c6 -4 12 -4 18 0 c-5 7 13 7 18 0z" />
           <path d="M130 16 c-6 -4 12 -4 18 0 c5 7 13 7 18 0z" />
         </svg>
-        <div class="wc-ribbon" style="margin-top: 6px"></div>
+        <div class="countdown-ribbon" style="margin-top: 6px"></div>
 
         <!-- Fecha destino -->
-        <p id="wc-date-text" class="wc-date"></p>
+        <p id="countdown-date-text" class="countdown-date"></p>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
